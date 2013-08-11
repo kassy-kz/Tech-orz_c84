@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="orz.kassy.nfclauncher.command"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+  　<uses-permission android:name="android.permission.NFC"/>
+　　<uses-feature android:name="android.hardware.nfc" android:required="true"/>
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".NfcWriteActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+            <intent-filter>
+　　　　　　　　    <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+　　　　　　　　    <category android:name="android.intent.category.DEFAULT" />
+　　　　　　　　    <data android:mimeType="text/plain" />
+　　　　　　   </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:scheme="tel" />
+                <data android:scheme="mailto" />
+                <data android:scheme="ftp" />
+                <data android:scheme="ftps" />
+                <data android:scheme="sftp" />
+                <data android:scheme="smb" />
+                <data android:scheme="nfs" />
+                <data android:scheme="dav" />
+                <data android:scheme="news" />
+                <data android:scheme="telnet" />
+                <data android:scheme="imap" />
+                <data android:scheme="rtsp" />
+                <data android:scheme="urn" />
+                <data android:scheme="pop" />
+                <data android:scheme="sip" />
+                <data android:scheme="sips" />
+                <data android:scheme="tftp" />
+                <data android:scheme="btspp" />
+                <data android:scheme="btl2cap" />
+                <data android:scheme="btgoep" />
+                <data android:scheme="tcpobex" />
+                <data android:scheme="irdaobex" />
+                <data android:scheme="file" />
+                <data android:scheme="sms" />
+                <data android:scheme="smsto" />
+                <data android:scheme="U" />
+            </intent-filter>
+            <intent-filter android:priority="-1">
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="vnd.android.nfc" />
+            </intent-filter>
+            <intent-filter >
+                <data android:scheme="oreore" />
+                <data android:host="orz.kassy.nfclauncher" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="oreore" android:host="orz.kassy.nfclauncher"
+                                                     android:path="/"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

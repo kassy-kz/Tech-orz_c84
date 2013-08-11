@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="orz.kassy.nfcwizardglove"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+   　<uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+ 　　<uses-feature android:name="android.hardware.nfc" android:required="true"/>
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="orz.kassy.nfcwizardglove.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SetCommandActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".PackageSelectActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".SetTouchEventActivity"
+            android:label="@string/app_name"  >     
+        </activity>
+        <activity
+            android:name=".NfcWriteActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        <activity
+            android:name=".NfcReadActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent">  
+                        <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="touch"
+                    android:pathPattern=".*"
+                    android:scheme="nfcwizard" />
+            </intent-filter>
+            
+        </activity>        
+
+        <service 
+            android:name=".NfcReadService">
+            
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="touch"
+                    android:pathPattern=".*"
+                    android:scheme="nfcwizard" />
+            </intent-filter>
+            
+        </service>
+    </application>
+
+</manifest>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NfcWizardGlove</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_section1">Left Hand</string>
+    <string name="title_section2">Right Hand</string>
+    <string name="action_command_type">どのコマンドタイプを書き込みますか</string>
+</resources>

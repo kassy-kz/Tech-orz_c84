@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="entries_list_preference">
+        <item>Alpha Option 01</item>
+        <item>Beta Option 02</item>
+        <item>Charlie Option 03</item>  
+    </string-array>
+
+    <string-array name="entryvalues_list_preference">
+        <item>alpha</item>
+        <item>beta</item>
+        <item>charlie</item>  
+    </string-array>
+
+    <string-array name="select_command_type">
+        <item>アプリ起動</item>
+        <item>タッチイベント</item>
+        <item>キーボードイベント</item>      
+    </string-array>
+
+    <string-array name="command">
+        <item>カメラシャッター</item>
+        <item>SNS更新</item>
+        <item>スライド上</item>
+        <item>スライド下</item>
+        <item>スライド左</item>
+        <item>スライド右</item>
+    </string-array>
+</resources>

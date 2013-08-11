@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="orz.kassy.eventinjector"
+    android:versionCode="1"
+    android:versionName="1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.INJECT_EVENTS"/>
+ 
+  
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <activity
+            android:name=".ReceiversActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+        </activity>
+        
+        <receiver android:name=".ReceiversActivity$KeyEventBroadcastReceiver" >
+            <intent-filter android:priority="1" >
+                <action android:name="orz.kassy.nfcwizard.keyevent" />
+                <category android:name="orz.kassy.receiver2" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".ReceiversActivity$SlideEventBroadcastReceiver" >
+            <intent-filter android:priority="1" >
+                <action android:name="orz.kassy.nfcwizard.slideevent" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name=".ReceiversActivity$SimpleTapBroadcastReceiver" >
+            <intent-filter android:priority="1" >
+                <action android:name="orz.kassy.nfcwizard.tapevent" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
